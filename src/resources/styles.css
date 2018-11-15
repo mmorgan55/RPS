@@ -1,0 +1,38 @@
+GridPane {
+  -fx-padding: 10px;
+  -fx-hgap: 5px;
+  -fx-vgap: 5px;
+}
+
+CheckBox {
+  -fx-font-weight: bold;
+}
+
+Label {
+  -fx-font-weight: bold;
+}
+
+Button {
+  -fx-font-weight: bold;
+  -fx-pref-width: 100px;
+}
+
+ScrollPane {
+  -fx-background-color: black;
+  -fx-min-width: 602px;
+  -fx-min-height: 602px;
+  -fx-pref-width: 602px;
+  -fx-pref-height: 602px;
+  -fx-pannable: true;
+  -fx-hbar-policy: never;
+  -fx-vbar-policy: never;
+
+}
+
+.scroll-pane > .viewport {
+  -fx-background-color: transparent;
+}
+
+Slider {
+  -fx-max-width: 180px;
+}
