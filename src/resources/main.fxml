@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<GridPane
+  xmlns="http://javafx.com/javafx"
+  xmlns:fx="http://javafx.com/fxml"
+  fx:controller="edu.cnm.deepdive.rps.controller.Controller"
+  stylesheets="@styles.css">
+
+  <columnConstraints>
+    <ColumnConstraints
+      percentWidth="33.3"/>
+    <ColumnConstraints
+      percentWidth="33.4"/>
+  </columnConstraints>
+
+  <CheckBox
+    fx:id="fitCheckbox"
+    text="%fit_to_container"
+    selected="false"
+    GridPane.rowIndex="0"
+    GridPane.columnIndex="0"
+    GridPane.valignment="BASELINE"
+    GridPane.halignment="LEFT"
+    onAction="#fitView"/>
+
+  <Text
+    fx:id="iterationsLabel"
+    GridPane.rowIndex="0"
+    GridPane.columnIndex="2"
+    GridPane.valignment="BASELINE"
+    GridPane.halignment="RIGHT"
+    text="%iterations_text"/>
+
+  <ScrollPane
+    fx:id="viewScroller"
+    GridPane.rowIndex="1"
+    GridPane.columnIndex="0"
+    GridPane.columnSpan="3"
+    GridPane.halignment="LEFT"
+    GridPane.valignment="TOP">
+
+    <!-- TODO Specify TerrainView-->
+
+  </ScrollPane>
+
+  <Slider
+    fx:id="speedSlider"
+    min="0"
+    max="10"
+    majorTickUnit="1"
+    minorTickCount="0"
+    snapToTicks="true"
+    showTickMarks="true"
+    showTickLabels="false"
+    blockIncrement="1"
+    GridPane.rowIndex="3"
+    GridPane.columnIndex="0"
+    GridPane.halignment="CENTER"
+    GridPane.valignment="TOP"
+    value="5"/>
+
+  <Label
+    text="%speed_slider_text"
+    labelFor="$speedSlider"
+    mnemonicParsing="true"
+    GridPane.rowIndex="2"
+    GridPane.columnIndex="0"
+    GridPane.halignment="CENTER"
+    GridPane.valignment="BOTTOM"/>
+
+  <Slider
+    fx:id="mixingSlider"
+    min="0"
+    max="10"
+    majorTickUnit="1"
+    minorTickCount="0"
+    snapToTicks="true"
+    showTickMarks="true"
+    showTickLabels="false"
+    blockIncrement="1"
+    value="0"
+    GridPane.rowIndex="3"
+    GridPane.columnIndex="1"
+    GridPane.halignment="CENTER"
+    GridPane.valignment="TOP"/>
+
+  <Label
+    text="%mixing_slider_text"
+    labelFor="$mixingSlider"
+    mnemonicParsing="true"
+    GridPane.rowIndex="2"
+    GridPane.columnIndex="1"
+    GridPane.halignment="CENTER"
+    GridPane.valignment="BOTTOM"/>
+
+  <Button
+    fx:id="start"
+    GridPane.rowIndex="4"
+    GridPane.columnIndex="0"
+    GridPane.halignment="CENTER"
+    text="%start_text"
+    onAction="#start"/>
+
+  <Button
+    fx:id="stop"
+    GridPane.rowIndex="4"
+    GridPane.columnIndex="1"
+    GridPane.halignment="CENTER"
+    text="%stop_text"
+    onAction="#stop"/>
+
+  <Button
+    fx:id="reset"
+    GridPane.rowIndex="4"
+    GridPane.columnIndex="2"
+    GridPane.halignment="CENTER"
+    text="%reset_text"
+    onAction="#reset"/>
+
+</GridPane>

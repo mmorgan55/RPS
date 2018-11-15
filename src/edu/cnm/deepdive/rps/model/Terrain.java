@@ -16,8 +16,7 @@ public class Terrain {
   }
 
   public void reset() {
-    for (int row = 0; row < grid.length; row++) {
-      RpsBreed[] rowContents = grid[row];
+    for (RpsBreed[] rowContents : grid) {
       for (int col = 0; col < rowContents.length; col++) {
         rowContents[col] = RpsBreed.values()[rng.nextInt(RpsBreed.values().length)];
       }
@@ -31,15 +30,15 @@ public class Terrain {
     Location defenderLocation = normalize(attackerLocation, offset);
     RpsBreed defender = grid[defenderLocation.getRow()][defenderLocation.getColumn()];
     int result = RpsBreed.REFEREE.compare(attacker, defender);
-    if (result<0) {
+    if (result < 0) {
       grid[attackerLocation.getRow()][attackerLocation.getColumn()] = defender;
-    } else if(result > 0) {
+    } else if (result > 0) {
       grid[defenderLocation.getRow()][defenderLocation.getColumn()] = attacker;
     }
   }
 
   public void step(int numSteps) {
-    for (int i =0; i < numSteps; i++) {
+    for (int i = 0; i < numSteps; i++) {
       step();
     }
   }
@@ -51,10 +50,8 @@ public class Terrain {
   }
 
   /**
-   * Returns a reference to the terrain contents. <strong>Important!</strong>
-   * This is <strong>not</strong> a safe copy.
-   *
-   * @return
+   * Returns a reference to the terrain contents. <strong>Important!</strong> This is
+   * <strong>not</strong> a safe copy.
    */
   public RpsBreed[][] getGrid() {
     return grid;
